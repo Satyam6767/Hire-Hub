@@ -1,0 +1,96 @@
+/* Styles for Dashboard Component */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: #f4f6f8;
+    font-family: "Arial", sans-serif;
+    padding: 20px;
+}
+
+.guest-dashboard {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.guest-dashboard h2 {
+    color: #333;
+}
+
+.dashboard-link {
+    font-size: 18px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.dashboard-link:hover {
+    text-decoration: underline;
+}
+
+/* User Dashboard */
+.user-dashboard {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.welcome-message {
+    font-size: 24px;
+    color: #333;
+}
+
+.user-role {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Action Links */
+.dashboard-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.dashboard-btn {
+    display: block;
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.dashboard-btn:hover {
+    background: #0056b3;
+}
+
+/* Logout Button */
+.logout-button {
+    background: #dc3545;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.logout-button:hover {
+    background: #c82333;
+}

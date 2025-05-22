@@ -1,0 +1,209 @@
+
+.banner-heading{
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 250px;
+    left: 120px;
+    width: 600px;
+  }
+
+  .navbar{
+    padding: 0px;
+  }
+  
+  .banner-heading h1{
+    color: black;
+    font-size: 60px;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .banner-heading button{
+    padding-left: 35px;
+    padding-right: 35px;
+    color: black;
+    border: 1px solid black;
+  }
+  
+  .text-light i{
+    font-size: 29px;
+  }
+  
+  
+  .header{
+    background-color: #29416f;
+    padding: 8px 0px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  .header li{
+    list-style-type: none;
+    color: white;
+  }
+  .left i{
+    color: green;
+  }
+  .left{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+  
+  }
+  
+  .header ul i{
+    margin-right: 8px;
+    
+  }
+  
+  .right{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .right i{
+    font-size: 20px;
+  }
+
+  .carousel img{
+    height: 83vh;
+  }
+
+  .carousel-caption{
+    bottom: 11.25rem;
+  }
+
+  .carousel-caption h1{
+    font-size: 78px;
+    font-family: "Museo W01 900";
+    color: black;
+    text-shadow: 0px 0px 8px white;
+  }
+
+  .carousel-caption h4{
+    text-shadow: 0px 0px 8px rgb(0, 0, 0);
+  }
+
+  .carousel-caption button{
+    border: 1px solid black;
+    margin-top: 5px;
+  }
+
+  .aboutus123 h1{
+    font-family: "Leadville W00 Regular";
+  }
+
+
+  .box1234{
+    border: 1px solid red;
+    width: 340px;
+  }
+
+  .bg-backg{
+    background-image: url("https://img.freepik.com/free-photo/pink-flowers-with-petals-yellow-table_23-2148069078.jpg?t=st=1741411224~exp=1741414824~hmac=b12f80f20511c853f525d2246f6fb6cb8f55f7284b548dedef2ef1a5a350d5c0&w=1060");
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bg-backg form{
+    border: 1px solid red;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 50px;
+    background-color: rgb(190, 166, 212);
+  }
+
+  .bg-backg form input{
+    margin-bottom: 40px;
+  }
+
+  .afterlogin-das{
+    /* background-color: rgb(78, 141, 91); */
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+
+
+  .for_heading_center{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 0px;
+  }
+
+  .left-about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
+
+  }
+
+  .left-about h1{
+    padding: 20px 0px;
+  }
+
+  .left-about li{
+    padding: 15px 0px;
+  }
+
+
+  .message{
+  background-color: #55D0FF;
+  background-image: linear-gradient(-90deg, #55D0FF 2%, #065BFF 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 0px;
+}
+
+.message h1{
+  margin-bottom: 25px;
+}
+
+.message button{
+  border-radius: 20px;
+  padding: 7px 25px;
+  width: 180px;
+  margin: 4px 10px;
+  /* color: white; */
+  font-weight: 400;
+}
+
+.btn-1{
+  background: linear-gradient(#fbd24a, #f6a724);
+}
+
+.btn-2{
+  background: linear-gradient(#311ec2, #bab2ee);
+}
+
+.footer-n{
+  background-color: #55D0FF;
+  padding:50px 0px;
+}
+
+.link-col-123{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

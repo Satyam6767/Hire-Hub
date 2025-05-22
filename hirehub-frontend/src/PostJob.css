@@ -1,0 +1,61 @@
+/* Styles for PostJob Component */
+.post-job-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: #f4f4f4;
+    font-family: "Arial", sans-serif;
+    padding: 20px;
+}
+
+.post-job-form {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.post-job-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.post-job-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-job-form input,
+.post-job-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.post-job-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.post-job-form button {
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.post-job-form button:hover {
+    background: #0056b3;
+}
