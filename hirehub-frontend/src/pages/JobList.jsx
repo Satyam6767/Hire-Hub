@@ -65,27 +65,49 @@ const JobList = () => {
     }
 
     try {
-      const data = new FormData();
-      data.append("name", formData.name);
-      data.append("experience", formData.experience);
-      data.append("number", formData.number);
-      data.append("resume", formData.resume);
+      // Prepare data for backend (with resume)
+      const backendData = new FormData();
+      backendData.append("name", formData.name);
+      backendData.append("experience", formData.experience);
+      backendData.append("number", formData.number);
+      backendData.append("resume", formData.resume);
 
-      const response = await axios.post(
+      // Send to backend API
+      const backendResponse = await axios.post(
         `http://localhost:5000/api/jobs/apply/${selectedJobId}`,
-        data,
+        backendData,
         {
           headers: {
             Authorization: token,
-            "Content-Type": "multipart/form-data"
-          }
+            "Content-Type": "multipart/form-data",
+          },
         }
       );
+
+      // Prepare data for Web3Forms (exclude resume)
+      const web3Data = new FormData();
+      web3Data.append("name", formData.name);
+      web3Data.append("experience", formData.experience);
+      web3Data.append("number", formData.number);
+      web3Data.append("access_key", "");
+
+      // Send to Web3Forms
+      const web3Response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: web3Data,
+      });
+
+      const web3Result = await web3Response.json();
+
+      if (!web3Result.success) {
+        console.error("Web3Forms error:", web3Result.message);
+        // Optionally show user a warning here or just log it
+      }
 
       Swal.fire({
         icon: "success",
         title: "Application Submitted",
-        text: response.data.message,
+        text: backendResponse.data.message,
       });
 
       closeForm();
@@ -97,34 +119,6 @@ const JobList = () => {
         text: error.response?.data?.message || "Application failed",
       });
     }
-  };
-
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(event.target);
-    formData.append("access_key", ""); // If using Web3Forms
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
-    }
-  };
-
-  const handleCombinedSubmit = async (e) => {
-    e.preventDefault();
-    await handleFormSubmit(e);
-    // await onSubmit(e); // Uncomment if Web3Forms should also be triggered
   };
 
   return (
@@ -157,7 +151,7 @@ const JobList = () => {
               justifyContent: "center", alignItems: "center", zIndex: 1000
             }}>
               <form
-                onSubmit={handleCombinedSubmit}
+                onSubmit={handleFormSubmit}
                 style={{
                   background: "#fff", padding: "30px", borderRadius: "10px",
                   width: "90%", maxWidth: "400px", position: "relative", boxShadow: "0 0 15px rgba(0,0,0,0.2)"
