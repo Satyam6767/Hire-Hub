@@ -27,9 +27,10 @@ app.use('/api/auth', authRoutes);
 app.use('/api/jobs', jobRoutes);
 app.use('/api/applications', applicationRoutes);
 
-
-app.get('/', (req, res) => {
-  res.send('Hello! Backend is running.');
+// ✅ Test endpoint
+app.get('/test', (req, res) => {
+  console.log('✅ /test endpoint hit!');
+  res.send('Test endpoint is working!');
 });
 
 // ✅ Start the server
