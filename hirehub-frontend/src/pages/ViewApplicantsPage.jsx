@@ -10,7 +10,7 @@ const ViewApplicantsPage = () => {
     const fetchApplicants = async () => {
         try {
             const token = localStorage.getItem("token");
-            const res = await fetch(`http://localhost:5000/api/applications/${jobId}/applicants`, {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/applications/${jobId}/applicants`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -27,7 +27,7 @@ const ViewApplicantsPage = () => {
     const fetchJobTitle = async () => {
         try {
             const token = localStorage.getItem("token");
-            const res = await fetch(`http://localhost:5000/api/jobs/${jobId}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs/${jobId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -43,7 +43,7 @@ const ViewApplicantsPage = () => {
     const updateStatus = async (applicationId, status) => {
         const token = localStorage.getItem("token");
         try {
-            await fetch(`http://localhost:5000/api/applications/status/${applicationId}`, {
+            await fetch(`${import.meta.env.VITE_API_URL}/api/applications/status/${applicationId}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -72,8 +72,9 @@ const ViewApplicantsPage = () => {
             ) : (
                 applicants.map((app) => {
                     const resumeLink = app.jobSeeker?.resume || app.resume;
-                    const fullResumeURL = `http://localhost:5000/${resumeLink.replace(/\\/g, "/")}`;
+                    const fullResumeURL = `${import.meta.env.VITE_API_URL}/${resumeLink.replace(/\\/g, "/")}`;
                     console.log("Resume Link:", fullResumeURL);
+
 
                     return (
                         <div key={app._id} className="applicant-card">

@@ -27,7 +27,7 @@ const Dashboard = () => {
         const fetchEmployerJobs = async () => {
             const token = localStorage.getItem("token");
             try {
-                const res = await fetch("http://localhost:5000/api/jobs/my-jobs", {
+                const res = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs/my-jobs`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

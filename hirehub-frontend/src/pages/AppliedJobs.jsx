@@ -19,7 +19,7 @@ const AppliedJobs = () => {
 
             try {
                 // Adjust URL if your route is different
-                const response = await axios.get("http://localhost:5000/api/applications/my-applications", {
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/applications/my-applications`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 

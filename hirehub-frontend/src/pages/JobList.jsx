@@ -22,7 +22,7 @@ const JobList = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/jobs/all");
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/jobs/all`);
         setJobs(response.data);
       } catch (error) {
         console.error("Error fetching jobs", error.response?.data);
@@ -74,7 +74,7 @@ const JobList = () => {
 
       // Send to backend API
       const backendResponse = await axios.post(
-        `http://localhost:5000/api/jobs/apply/${selectedJobId}`,
+        `${import.meta.env.VITE_API_URL}/api/jobs/apply/${selectedJobId}`,
         backendData,
         {
           headers: {

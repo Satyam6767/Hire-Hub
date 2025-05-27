@@ -21,7 +21,7 @@ const JobApplicants = () => {
             try {
                 console.log("Fetching applicants for Job ID:", jobId); // Debug log
 
-                const response = await axios.get(`http://localhost:5000/api/applications/${jobId}/applicants`, {
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/applications/${jobId}/applicants`, {
                     headers: { Authorization: token }
                 });
                 
