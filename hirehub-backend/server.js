@@ -10,9 +10,26 @@ const app = express();
 // ✅ Connect to MongoDB
 connectDB();
 
-// ✅ Middleware
+// ✅ Middleware to parse JSON
 app.use(express.json());
-app.use(cors());
+
+// ✅ CORS configuration to allow only your frontend URL
+const allowedOrigins = [process.env.CLIENT_URL];
+
+app.use(cors({
+  origin: function(origin, callback) {
+    // allow requests with no origin (like Postman or curl)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = `The CORS policy for this site does not allow access from the specified Origin: ${origin}`;
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // ✅ Serve static files (like resumes) from the "uploads" folder
 // This should be ABOVE your protected API routes
